@@ -1,0 +1,36 @@
+Bottleneck @ file:///C:/b/abs_816hr2khp1/croot/bottleneck_1731058648110/work
+Brotli @ file:///C:/b/abs_c415aux9ra/croot/brotli-split_1736182803933/work
+certifi @ file:///C:/b/abs_8a944p1_gn/croot/certifi_1738623753421/work/certifi
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+filelock @ file:///C:/b/abs_758187j281/croot/filelock_1744281404850/work
+gmpy2 @ file:///C:/b/abs_d8ki0o0h97/croot/gmpy2_1738085498525/work
+idna @ file:///C:/b/abs_aad84bnnw5/croot/idna_1714398896795/work
+Jinja2 @ file:///C:/b/abs_920kup4e6u/croot/jinja2_1741711580669/work
+joblib @ file:///C:/b/abs_f4b98l6lgk/croot/joblib_1718217224240/work
+MarkupSafe @ file:///C:/b/abs_a0ma7ge0jc/croot/markupsafe_1738584052792/work
+mkl-service==2.4.0
+mkl_fft @ file:///C:/Users/dev-admin/mkl/mkl_fft_1730823082242/work
+mkl_random @ file:///C:/Users/dev-admin/mkl/mkl_random_1730822522280/work
+mpmath @ file:///C:/b/abs_7833jrbiox/croot/mpmath_1690848321154/work
+networkx @ file:///C:/b/abs_b054htfn9t/croot/networkx_1737043671910/work
+numexpr @ file:///C:/b/abs_05o8p7bfml/croot/numexpr_1730215959182/work
+numpy @ file:///C:/b/abs_71ejae7e2v/croot/numpy_and_numpy_base_1742570444043/work/dist/numpy-2.2.4-cp310-cp310-win_amd64.whl#sha256=9ebfa6db3435c9f6646a0bcfeb27f4d7d9a4a550910e8b83f204cf6d99d45af6
+pandas @ file:///C:/b/abs_e18w9ay4we/croot/pandas_1732735115740/work/dist/pandas-2.2.3-cp310-cp310-win_amd64.whl#sha256=6fc0a0523ea4ec3f23a2b790c738c857942b4c579479f8012ac8148d675b8975
+pillow @ file:///C:/b/abs_68t826txdy/croot/pillow_1744613085333/work
+PySocks @ file:///C:/ci_310/pysocks_1642089375450/work
+python-dateutil @ file:///C:/b/abs_3au_koqnbs/croot/python-dateutil_1716495777160/work
+pytz @ file:///C:/b/abs_6ap4tsz1ox/croot/pytz_1713974360290/work
+PyYAML @ file:///C:/b/abs_14xkfs39bx/croot/pyyaml_1728657968772/work
+requests @ file:///C:/b/abs_c3508vg8ez/croot/requests_1731000584867/work
+scikit-learn @ file:///C:/b/abs_0dwalqot3o/croot/scikit-learn_1737988780693/work/dist/scikit_learn-1.6.1-cp310-cp310-win_amd64.whl#sha256=d1337168ee64380b26e38a8be42467bd0f3a1db3d3118e6244e11a2be8b05064
+scipy @ file:///C:/b/abs_57lp_c7nt4/croot/scipy_1743153260151/work/dist/scipy-1.15.2-cp310-cp310-win_amd64.whl#sha256=d1f5c7eabce60202ed216f4efcbfb2250f07e0525e4da7546b2e91c257cfd903
+six @ file:///C:/b/abs_149wuyuo1o/croot/six_1744271521515/work
+sympy @ file:///C:/b/abs_b4u17p23yg/croot/sympy_1738108511395/work
+threadpoolctl @ file:///C:/b/abs_def0dwqlft/croot/threadpoolctl_1719407816649/work
+torch==2.5.1
+torchaudio==2.5.1
+torchvision==0.20.1
+typing_extensions @ file:///C:/b/abs_0ffjxtihug/croot/typing_extensions_1734714875646/work
+tzdata @ file:///croot/python-tzdata_1690578112552/work
+urllib3 @ file:///C:/b/abs_7bst06lizn/croot/urllib3_1737133657081/work
+win-inet-pton @ file:///C:/ci_310/win_inet_pton_1642658466512/work
