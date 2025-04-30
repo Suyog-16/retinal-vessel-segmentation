@@ -20,7 +20,7 @@ class DoubleConv(nn.Module):
 class Unet(nn.Module):
     def __init__(self,in_channels = 3,out_channels = 1):
         super(Unet,self).__init__()
-        self.enc1 = DoubleConv(inc_channels = in_channels ,out_channels =64)
+        self.enc1 = DoubleConv(in_channels = in_channels ,out_channels =64)
         self.enc2 = DoubleConv(in_channels = 64,out_channels = 128)
         self.enc3 = DoubleConv(in_channels =128,out_channels =256)
         self.enc4 = DoubleConv(in_channels = 256,out_channels = 512)
