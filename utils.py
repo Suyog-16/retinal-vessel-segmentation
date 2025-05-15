@@ -1,22 +1,32 @@
 import torch
-def dice_score(y_pred,y_true,smooth= 1e-15):
-    """
-    Computes the Dice coefficient for binary segmeantaion
+from torch import nn
+device = 'cuda' if torch.cuda.is_available() else "cpu"
 
-    Args:
-    - y_pred : torch tensor,predicted binary mask(0 or 1)
-    - y : torch tensor, ground truth binary mask(0 or 1)
-    - smooth : small number to avoid divison by zero
 
-    Returns:
-    - Dice coefficient (float)
-    """
-    y_true = y_true.view(-1)
-    y_pred = y_pred.view(-1)
+def dice_score(pred, target, smooth=1e-6):
+    pred = torch.sigmoid(pred)
+    pred = (pred > 0.5).float()
+    target = target.float()
+    pred_sum = pred.sum().item()
+    target_sum = target.sum().item()
+    #print(f"Pred sum: {pred_sum}, Target sum: {target_sum}")
+    intersection = (pred * target).sum()
+    denominator = pred.sum() + target.sum() + smooth
+    if denominator == smooth:
+        return 0.0
+    return (2. * intersection + smooth) / denominator
 
-    intersection = torch.sum(y_true * y_pred)
-    total = torch.sum(y_true) + torch.sum(y_pred)
+def dice_loss(pred, target, smooth=1e-6):
+    pred = torch.sigmoid(pred)
+    pred = (pred > 0.5).float()
+    target = target.float()
+    intersection = (pred * target).sum()
+    denominator = pred.sum() + target.sum() + smooth
+    if denominator == smooth:
+        return 1.0
+    return 1 - ((2. * intersection + smooth) / denominator)
 
-    dice = (2. * intersection + smooth) / (total + smooth)
-    return dice.item()
-
+def combined_loss(y_pred, y_true):
+    bce = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([20.0]).to(device))(y_pred, y_true)
+    dice = dice_loss(y_pred, y_true)
+    return 0.5 * bce + 0.5 * dice
