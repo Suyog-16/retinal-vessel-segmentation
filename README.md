@@ -1,10 +1,10 @@
-# 🩺 Retinal Vessel Segmentation using U-Net
+#  Retinal Vessel Segmentation using U-Net
 
 This project performs **semantic segmentation** of blood vessels in retinal images using a U-Net architecture, trained on the [DRIVE](https://drive.grand-challenge.org/) dataset. The goal is to assist in diagnosing diabetic retinopathy and related conditions.
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 
@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🧠 Training
+##  Training
 
 Place the DRIVE dataset inside the `dataset/` folder in the following format:
 
@@ -82,30 +82,30 @@ python src/inference.py --img_path samples/example_image.png --model_path models
 
 ---
 
-## 📈 Evaluation Metrics
+##  Evaluation Metrics
 
 - **Dice Score**: ~0.71 on DRIVE test set
 - **IoU Score**: ~0.55 on DRIVE test set
 
 ---
 
-## 📌 Features
+##  Features
 
-- U-Net architecture in PyTorch
+- Custom U-Net architecture in PyTorch
 - Combined BCE + Dice Loss for better performance
 - Data augmentation with Albumentations
 - Easily extendable to web demo with Streamlit
 
 ---
 
-## 📷 Sample Results
+##  Sample Results
 
-![Sample Input](samples/example_image.png)
-![Prediction](samples/example_output.png)
+![Sample Input](img/Figure_1.png)
+<br>
+![Sample Input2](img/Figure_2.png)
 
 ---
-
-## 🤝 Acknowledgments
+##  Acknowledgments
 
 - Dataset: [DRIVE](https://drive.grand-challenge.org/)
 - U-Net: Ronneberger et al., 2015
@@ -113,7 +113,7 @@ python src/inference.py --img_path samples/example_image.png --model_path models
 
 ---
 
-## 📜 License
+##  License
 
-MIT License# 
+MIT License
 
