@@ -15,10 +15,10 @@ cd retinal-vessel-segmentation
 
 ### 2. Install Dependencies
 
-Use a virtual environment:
+Use a virtual environment :
 
 ```bash
-pip install -r requirements.txt
+conda env create -f environment.yml
 ```
 
 ---
