@@ -35,8 +35,8 @@ st.title("Retinal Vessel Segmentation")
 st.sidebar.header("Input Image")
 uploaded_file = st.sidebar.file_uploader("Upload a retinal image", type=["png", "jpg", "jpeg", "tif"])
 
-test_dir = "C:/Users/Acer nitro/Desktop/retinal-vessel-segmentation/data/DRIVE/test/images"
-test_images = [f for f in os.listdir(test_dir) if f.endswith((".tif", ".jpg", ".png"))]
+TEST_DIR = os.path.join(BASE_DIR, "..", "data", "DRIVE", "test", "images")
+test_images = [f for f in os.listdir(TEST_DIR) if f.lower().endswith((".tif", ".jpg", ".png"))]
 selected_test = st.sidebar.selectbox("...or choose from test images", ["None"] + test_images)
 
 # Load image
@@ -44,7 +44,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file).convert("RGB")
     filename = "Uploaded Image"
 elif selected_test != "None":
-    image_path = os.path.join(test_dir, selected_test)
+    image_path = os.path.join(TEST_DIR, selected_test)
     image = Image.open(image_path).convert("RGB")
     filename = selected_test
 else:
