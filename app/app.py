@@ -65,6 +65,6 @@ with torch.no_grad():
 st.subheader(f"Original and Predicted Mask: {filename}")
 col1, col2 = st.columns(2)
 with col1:
-    st.image(image, caption="Original Image", use_column_width=True)
+    st.image(image, caption="Original Image", use_container_width=True)
 with col2:
-    st.image(pred_mask, caption="Predicted Vessel Mask", use_column_width=True, clamp=True)
+    st.image(pred_mask, caption="Predicted Vessel Mask", use_container_width=True, clamp=True)
