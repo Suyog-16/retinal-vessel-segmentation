@@ -11,11 +11,13 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.model import Unet
+BASE_DIR = os.path.dirname(__file__)  # path to /app
+MODEL_PATH = os.path.join(BASE_DIR, "..", "models", "best_unet.pth")
 
 # Set up
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model = Unet(in_channels=3, out_channels=1)
-model.load_state_dict(torch.load("C:/Users/Acer nitro/Desktop/retinal-vessel-segmentation/models/best_unet.pth", map_location=device))
+model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
 model.to(device)
 model.eval()
 
