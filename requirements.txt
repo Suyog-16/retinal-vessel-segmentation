@@ -1,0 +1,31 @@
+# core dependencies
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.6.1
+scipy==1.15.2
+matplotlib==3.10.3
+opencv-python-headless==4.11.0.86
+pillow==11.2.1
+
+# torch CPU-only wheels
+torch==1.12.1+cpu
+torchvision==0.13.1+cpu
+torchaudio==0.12.1+cpu
+
+# albumentations for image transforms
+albumentations==2.0.7
+
+# tqdm progress bar
+tqdm==4.67.1
+
+# streamlit + dependencies
+streamlit==1.45.1
+pydeck==0.9.1
+watchdog==6.0.0
+altair==5.5.0
+protobuf==6.31.0
+requests==2.32.3
+pyyaml==6.0.2
+
+# optional: git-related tools (only if needed)
+gitpython==3.1.44
