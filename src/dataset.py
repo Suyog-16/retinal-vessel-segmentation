@@ -1,5 +1,5 @@
 import os
-import PIL as Image
+from PIL import Image
 import torch
 from torch.utils.data import Dataset
 import random
@@ -31,30 +31,21 @@ class DRIVE_dataset(Dataset):
         image_path = os.path.join(self.img_dir, image_name)
         mask_path = os.path.join(self.mask_dir, mask_name)
 
-        image = Image.open(image_path).convert("RGB")
-        mask = Image.open(mask_path).convert("L")
+        image = np.array(Image.open(image_path).convert("RGB"))
+        mask = np.array(Image.open(mask_path).convert("L"))
 
-        mask_np = np.array(mask)
-        mask_bin = (mask_np > 0).astype(np.uint8)
+        # Binarize mask: make sure it's 0 and 1
+        mask = (mask > 0).astype(np.uint8)
 
-        #if index == 0:
-            #print("Unique mask values (raw):", np.unique(mask_np))
-            #print("Unique mask values (binarized):", np.unique(mask_bin))
-
-        mask = Image.fromarray(mask_bin)
+        # If needed, expand mask dims to HWC
+        if mask.ndim == 2:
+            mask = np.expand_dims(mask, axis=-1)
 
         if self.transform:
-            seed = random.randint(0, 1000000)
-            random.seed(seed)
-            torch.manual_seed(seed)
-            image = self.transform(image)
-            random.seed(seed)
-            torch.manual_seed(seed)
-            mask = self.transform(mask)
-            mask = (mask >= 0.003921568).float()
-
-        #if index == 0:
-            #print("Mask sum after transform:", mask.sum().item())
-            #print("Unique mask values after transform:", torch.unique(mask).tolist())
+            augmented = self.transform(image=image, mask=mask)
+            image = augmented['image']
+            mask = augmented['mask']
+            mask = mask.float()
+            mask = mask.permute(2,0,1)
 
         return image, mask
