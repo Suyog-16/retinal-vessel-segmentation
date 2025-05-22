@@ -6,6 +6,7 @@ channels:
   - https://repo.anaconda.com/pkgs/r
   - https://repo.anaconda.com/pkgs/msys2
 dependencies:
+  - python=3.10.16=h4607a30_1
   - asttokens=3.0.0=py310haa95532_0
   - blas=1.0=mkl
   - bottleneck=1.4.2=py310hc99e966_0
@@ -75,7 +76,7 @@ dependencies:
   - pure_eval=0.2.2=pyhd3eb1b0_0
   - pygments=2.19.1=py310haa95532_0
   - pysocks=1.7.1=py310haa95532_0
-  - python=3.10.16=h4607a30_1
+  
   - python-dateutil=2.9.0post0=py310haa95532_2
   - python-tzdata=2023.3=pyhd3eb1b0_0
   - pytorch=1.12.1=py3.10_cuda11.3_cudnn8_0
