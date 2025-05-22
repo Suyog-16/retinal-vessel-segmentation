@@ -17,7 +17,7 @@ dependencies:
   - charset-normalizer=3.3.2=pyhd3eb1b0_0
   - colorama=0.4.6=py310haa95532_0
   - comm=0.2.1=py310haa95532_0
-  - cudatoolkit=11.3.1=h59b6b97_2
+ 
   - debugpy=1.8.11=py310h5da7b33_0
   - decorator=5.1.1=pyhd3eb1b0_0
   - exceptiongroup=1.2.0=py310haa95532_0
@@ -79,8 +79,8 @@ dependencies:
   
   - python-dateutil=2.9.0post0=py310haa95532_2
   - python-tzdata=2023.3=pyhd3eb1b0_0
-  - pytorch=1.12.1=py3.10_cuda11.3_cudnn8_0
-  - pytorch-mutex=1.0=cuda
+  - pytorch=1.12.1
+  - pytorch-mutex=1.0
   - pytz=2024.1=py310haa95532_0
   - pywin32=308=py310h5da7b33_0
   - pyyaml=6.0.2=py310h827c3e9_0
@@ -96,8 +96,8 @@ dependencies:
   - tbb=2021.8.0=h59b6b97_0
   - threadpoolctl=3.5.0=py310h9909e9c_0
   - tk=8.6.14=h0416ee5_0
-  - torchaudio=0.12.1=py310_cu113
-  - torchvision=0.13.1=py310_cu113
+  - torchaudio=0.12.1
+  - torchvision=0.13.1
   - tornado=6.4.2=py310h827c3e9_0
   - tqdm=4.67.1=py310h9909e9c_0
   - traitlets=5.14.3=py310haa95532_0
