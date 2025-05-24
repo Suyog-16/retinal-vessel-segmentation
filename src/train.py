@@ -24,6 +24,24 @@ device = 'cuda' if torch.cuda.is_available() else "cpu"
 
 
 def train_step(model, dataloader, criterion, optimizer):
+    """
+    Performs one training step over a single epoch
+
+    Args:
+    - model(torch.nn.Module) : The model to be trained
+    - dataloader(torch.utils.data.DataLoader) : Dataloader for training data
+    - criterion(torch.nn.Module) : Loss function to calculate loss
+    - optimizer(torch.optim.Optimizer) : Optimizer to update the model parameters
+
+
+    Returns:
+    - tuple : A tuple containing:
+        - train_loss(float) : Average training loss over the training samples
+        - train_dice(float) : Average Dice coefficient score over the training samples
+        - train_iou(flaot) : Average Intersection over union score over the training samples
+
+    
+    """
     model.train()
     train_loss, train_dice,train_iou = 0, 0,0
     for batch, (X, y) in enumerate(dataloader):
@@ -43,7 +61,23 @@ def train_step(model, dataloader, criterion, optimizer):
 
 
 
-def test_step(model, dataloader, criterion, epoch):
+def test_step(model, dataloader, criterion):
+    """
+    Performs one testing step over a single epoch
+
+    Args:
+    - model(torch.nn.Module) : The model to be tested
+    - dataloader(torch.utils.data.DataLoader) : Dataloader for testing data
+    - criterion(torch.nn.Module) : Loss function to calculate loss
+    
+
+
+    Returns:
+    - tuple : A tuple containing:
+        - test_loss(float) : Average testing loss over the testing samples
+        - test_dice(float) : Average Dice coefficient score over the testing samples
+        - test_iou(flaot) : Average Intersection over union score over the testing samples
+    """
     model.eval()
     test_loss, test_dice,test_iou = 0, 0, 0
     with torch.no_grad():
