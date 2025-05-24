@@ -54,7 +54,7 @@ def dice_loss(pred, target, smooth=1e-6):
     return 1 - ((2. * intersection + smooth) / denominator)
 
 def combined_loss(y_pred, y_true):
-    bce = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([20.0]).to(device))(y_pred, y_true)
+    bce = nn.BCEWithLogitsLoss()(y_pred, y_true)
     dice = dice_loss(y_pred, y_true)
     return 0.5 * bce + 0.5 * dice
 
